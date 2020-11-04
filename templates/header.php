@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/functions/show_menu.php';
+include $_SERVER['DOCUMENT_ROOT'] . '/functions/show_menu.php'; // 2. чтобы меню заработало подключаем функцию
 
 ?>
 
@@ -22,6 +22,8 @@ include $_SERVER['DOCUMENT_ROOT'] . '/functions/show_menu.php';
 
     <div class="clear">
         <?php
-        include $_SERVER['DOCUMENT_ROOT'] . '/templates/menu_header.php';
+
+        include $_SERVER['DOCUMENT_ROOT'] . '/templates/menu_header.php';  // 1. подключаем преобразованное меню в разметку (в файле вызов функции)
+
         ?>
     </div>

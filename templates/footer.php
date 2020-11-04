@@ -1,6 +1,10 @@
+<!-- 2 . здесь функцию не надо подключать т.к. она подключена в Header -->
+
 <div class="clear">
   <?php
-  include $_SERVER['DOCUMENT_ROOT'] . '/templates/menu_footer.php';
+
+  include $_SERVER['DOCUMENT_ROOT'] . '/templates/menu_footer.php'; // 1. подключаем преобразованное меню в разметку (в файле вызов функции)
+
   ?>
 </div>
 
