@@ -1,5 +1,6 @@
 <?php
 
+include $_SERVER['DOCUMENT_ROOT'] . '/includes/main_menu.php';
 include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php';
 
 ?>

@@ -12,5 +12,6 @@ function arraySort(array $array, $key = 'sort', $sort = SORT_ASC): array
 
 function showMenu($classMenu)
 {
-    include $_SERVER['DOCUMENT_ROOT'] . '/includes/main_menu.php';    // подключаем само меню
+    include $_SERVER['DOCUMENT_ROOT'] . '/includes/main_menu.php'; // подключаем массив меню
+    include $_SERVER['DOCUMENT_ROOT'] . '/templates/menu.php';     // подключаем разметку меню
 }
