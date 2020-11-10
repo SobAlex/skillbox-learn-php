@@ -1,6 +1,6 @@
 <?php
 // подключение массива с данными
-include $_SERVER['DOCUMENT_ROOT'] . '/users.php';
+include $_SERVER['DOCUMENT_ROOT'] . 'includes/users.php';
 
 $isAuth = false;
 

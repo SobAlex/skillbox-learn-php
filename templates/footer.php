@@ -3,7 +3,7 @@
 <div class="clear">
   <?php
 
-  include $_SERVER['DOCUMENT_ROOT'] . '/templates/menu_footer.php'; // 1. подключаем преобразованное меню в разметку (в файле вызов функции)
+  showMenu('main-menu bottom');
 
   ?>
 </div>
