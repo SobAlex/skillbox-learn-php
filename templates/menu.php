@@ -4,7 +4,7 @@
     for ($i = 0; $i < count($mainMenu); $i++) {
     ?>
 
-        <li><a class="active" href="<?= $mainMenu[$i]['path'] ?>"><?= cutString() ?></a></li>
+        <li><a class="active" href="<?= $mainMenu[$i]['path'] ?>"><?= $mainMenu[$i]['title'] ?></a></li> <!-- потом сделать вывод через cutString -->
 
     <?php
     }

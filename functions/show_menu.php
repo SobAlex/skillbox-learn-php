@@ -1,19 +1,21 @@
 <?php
 
 // сортировка меню
-function arraySort($array, $key = 'sort', $sort = SORT_ASC): array
-{
-    foreach ($array as $key => $value) {
-    }
-    sort($array);
-}
+// function arraySort($array, $key = 'sort', $sort = SORT_ASC): array
+// {
+//     foreach ($mainMenu as $key1 => $value1) {
 
-arraySort($mainMenu);
+//         foreach ($value1 as $key2 => $value2) {
+//         }
+//     }
+// }
 
-// обрезка строки
-function cutString($array, $length = 12, $appends = '...'): string
-{
-}
+// arraySort($mainMenu);
+
+// // обрезка строки
+// function cutString($array, $length = 12, $appends = '...'): string
+// {
+// }
 
 // вывод готовового меню
 function showMenu($classMenu)
