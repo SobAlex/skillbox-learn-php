@@ -30,5 +30,10 @@ $mainMenu = [
         'title' => 'Тест',
         'path' => '/route/test/',
         'sort' => 6
+    ],
+    [
+        'title' => 'Тест2',
+        'path' => '/route/test2/',
+        'sort' => 30
     ]
 ];

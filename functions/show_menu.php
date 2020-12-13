@@ -1,25 +1,30 @@
 <?php
 
+error_reporting(-1);
+
+require $_SERVER['DOCUMENT_ROOT'] . '/includes/main_menu.php'; // подключили меню
+
 // сортировка меню
-// function arraySort($array, $key = 'sort', $sort = SORT_ASC): array
-// {
-//     foreach ($mainMenu as $key1 => $value1) {
+function arraySort($x, $y, $key = 'sort') // вспомогательная функция для сортировки меню
+{
+    return $x[$key] <=> $y[$key];
+}
 
-//         foreach ($value1 as $key2 => $value2) {
-//         }
-//     }
-// }
-
-// arraySort($mainMenu);
-
-// // обрезка строки
-// function cutString($array, $length = 12, $appends = '...'): string
-// {
-// }
-
-// вывод готовового меню
+// вывод готового меню
 function showMenu($classMenu)
 {
-    include $_SERVER['DOCUMENT_ROOT'] . '/includes/main_menu.php'; // подключаем массив меню
-    include $_SERVER['DOCUMENT_ROOT'] . '/templates/menu.php';     // подключаем разметку меню
+    require $_SERVER['DOCUMENT_ROOT'] . '/includes/main_menu.php'; // подключили меню
+    usort($mainMenu, 'arraySort');
+    require $_SERVER['DOCUMENT_ROOT'] . '/templates/menu.php';     // подключаем разметку меню
 }
+
+//обрезка строки
+function cutString($array, $length = 3) // вспомогательная функция для обрезки строк
+{
+    foreach ($array as $key) {
+        $strTitle = $key['title']; // перебираем массив ищем значение title
+        mb_substr($strTitle, $length); // передаем этот title в функцию, которая возвращает готовый title
+    }
+}
+
+echo cutString($mainMenu); // не выводит ничего

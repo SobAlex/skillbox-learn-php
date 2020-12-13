@@ -1,16 +1,14 @@
-<!-- 2 . здесь функцию не надо подключать т.к. она подключена в Header -->
-
 <div class="clear">
   <?php
 
-  showMenu('main-menu bottom');
+  showMenu('main-menu bottom'); // вызов функции с аргументом для стилизации в footer
 
   ?>
 </div>
 
 <div class="footer">
   &copy;&nbsp;
-  <nobr>2018</nobr>
+  <nobr><?php echo date('Y') ?></nobr>
   Project.
 </div>
 </body>

@@ -1,19 +1,23 @@
 <?php
+
 // подключение массива с данными
-include $_SERVER['DOCUMENT_ROOT'] . '/includes/users.php';
+require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/users.php'; // база пользователей
 
-$isAuth = false;
+$isAuth = false; // по умолчанию авторизации нет
 
-if (isset($_POST['submit'])) {
-    $login = (!empty($_POST['login'])) ? $_POST['login'] : null;
-    $password = (!empty($_POST['password'])) ? $_POST['password'] : null;
-    $index = array_search($login, $logins, true);
-    $isAuth = $index !== false && $password == $passwords[$index];
+if (isset($_POST['submit'])) { // если нажали кнопку сабмит то выполняется код в теле
+    $login = (!empty($_POST['login'])) ? $_POST['login'] : null; // если поле логин не пустое то записываем в переменную значение или null
+    $password = (!empty($_POST['password'])) ? $_POST['password'] : null; // если поле пароль не пустое то записываем в переменную значение или null
+    $index = array_search($login, $logins, true); // осуществляет поиск значения в массиве $login-то что ищем. $logins-где ищем. true-идентичный поиск. вернется индекс элемента
+    $isAuth = $index !== false && $password == $passwords[$index]; // будет true если все условия выполнятся => авторизация.
 }
+
 ?>
 
 <?php
-include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php';
+
+require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; // шапка сайта
+
 ?>
 
 <table width="100%" border="0" cellspacing="0" cellpadding="0">
@@ -38,30 +42,32 @@ include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php';
             <div class="index-auth">
 
                 <?php
-                if (isset($_POST['submit'])) {
 
+                if (isset($_POST['submit'])) {
                     if ($isAuth) {
-                        include $_SERVER['DOCUMENT_ROOT'] . '/include/success_auth.php';
+                        require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/success_auth.php'; // если $isAuth true
                     } else {
-                        include $_SERVER['DOCUMENT_ROOT'] . '/include/error_auth.php';
+                        require_once $_SERVER['DOCUMENT_ROOT'] . '/includes/error_auth.php'; // если $isAuth false
                     }
                 }
 
                 // условие вывода формы
-                if (isset($_GET['login']) && $_GET['login'] == 'yes') :
+                if (isset($_GET['login']) && $_GET['login'] == 'yes') : // форма выводится при условии get параметров
+
                 ?>
 
                     <form action="/?login=yes" method="POST">
+                        <!-- те самые get параметры -->
                         <table width="100%" border="0" cellspacing="0" cellpadding="0">
                             <tr>
                                 <td class="iat"><label for="login_id">Ведите логин</label>
-                                    <input id="login_id" size="30" name="login" type="text" value="<?= $login = $_POST['login'] ?? null ?>">
+                                    <input id="login_id" size="30" name="login" type="text" value="<?= $login = $_POST['login'] ?? null ?>"> <!-- первично заведенные данные или null-->
                                 </td>
                             </tr>
 
                             <tr>
                                 <td class="iat"><label for="password_id">Ваш пароль:</label>
-                                    <input id="password_id" size="30" name="password" type="password" value="<?= $password = $_POST['password'] ?? null ?>">
+                                    <input id="password_id" size="30" name="password" type="password" value="<?= $password = $_POST['password'] ?? null ?>"> <!-- первично заведенные данные или null-->
                                 </td>
                             </tr>
 
@@ -79,5 +85,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php';
 </table>
 
 <?php
+
 include $_SERVER['DOCUMENT_ROOT'] . '/templates/footer.php';
+
 ?>

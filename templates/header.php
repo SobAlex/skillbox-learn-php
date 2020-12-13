@@ -1,6 +1,6 @@
 <?php
 
-include $_SERVER['DOCUMENT_ROOT'] . '/functions/show_menu.php'; // 2. чтобы меню заработало подключаем функцию
+require $_SERVER['DOCUMENT_ROOT'] . '/functions/show_menu.php'; // функция для работы с меню
 
 ?>
 
@@ -23,7 +23,7 @@ include $_SERVER['DOCUMENT_ROOT'] . '/functions/show_menu.php'; // 2. чтобы
     <div class="clear">
         <?php
 
-        showMenu('main-menu');
+        showMenu('main-menu'); // вызов функции с аргументом для стилизации в header
 
         ?>
     </div>
