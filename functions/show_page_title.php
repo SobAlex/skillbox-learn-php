@@ -17,9 +17,6 @@ foreach ($mainMenu as $menuItem) {
         $titlePage = $menuItem['title'];
     }
 }
-var_dump($currentUrl); // на последнем элементе в массиве выводит true остальные false. почему?
-
-
 
 ?>
 

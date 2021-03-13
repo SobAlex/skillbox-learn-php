@@ -27,13 +27,8 @@ $mainMenu = [
         'sort' => 3
     ],
     [
-        'title' => 'Тест',
-        'path' => '/route/test/',
-        'sort' => 6
-    ],
-    [
-        'title' => 'Тест2',
-        'path' => '/route/test2/',
+        'title' => 'Длинный пункт меню',
+        'path' => '/route/long-title/',
         'sort' => 30
     ]
 ];
