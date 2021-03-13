@@ -1,11 +1,16 @@
 <ul class="<?= $classMenu ?>">
 
     <?php
+
     for ($i = 0; $i < count($mainMenu); $i++) {
+
+        $path = $mainMenu[$i]['path'];
+        $classLink = strpos($_SERVER["REQUEST_URI"], $path) !== false ? 'active' : '';
+
     ?>
 
         <li>
-            <a class="active" href="<?= $mainMenu[$i]['path']; ?>"><?= $mainMenu[$i]['title']; ?></a> <!-- потом сделать вывод через cutString -->
+            <a class="<?php echo $classLink; ?>" href="<?= $mainMenu[$i]['path']; ?>"><?= cutString($mainMenu[$i]['title']); ?></a>
         </li>
 
     <?php

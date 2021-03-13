@@ -1,5 +1,7 @@
 <?php
 
+// проверка текущего положения
+
 require $_SERVER['DOCUMENT_ROOT'] . '/includes/main_menu.php'; // основное меню массив
 
 function  isCurrentUrl($url) // функция сравнения текущего path с тем что в массиве возвращает либо true or false
@@ -13,7 +15,6 @@ foreach ($mainMenu as $menuItem) {
     $currentUrl = isCurrentUrl($menuItem['path']); // true либо false
 
     if ($currentUrl) { // как только условие станет true то в $titlePage запишется текущий title
-
         $titlePage = $menuItem['title'];
     }
 }
