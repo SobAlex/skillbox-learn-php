@@ -19,6 +19,7 @@ function arraySort($key = 'sort') // вспомогательная функци
 }
 
 // обрезка строки
+// mb_strimwidth ( string $linkTitle , int $start = 0 , int $length , string $appends , string|null $encoding = null ) : string
 function cutString($linkTitle, $length = 12, $appends = '...'): string  // функция с 3-мя аргументами
 {
         if (mb_strlen($linkTitle) > $length) { // если какойто title больше 12 символов
@@ -29,6 +30,7 @@ function cutString($linkTitle, $length = 12, $appends = '...'): string  // фу�
         }
 
     return $newLinkTitle; // возврат новой строки
+
 };
 
 //debug($mainMenu);
