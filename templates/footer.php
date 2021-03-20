@@ -1,7 +1,7 @@
 <div class="clear">
   <?php
 
-  showMenu('main-menu bottom'); // вызов функции с аргументом для стилизации в footer
+  showMenu($mainMenu,'main-menu bottom', 'title', SORT_DESC); // вызов функции с аргументом для стилизации в footer
 
   ?>
 </div>

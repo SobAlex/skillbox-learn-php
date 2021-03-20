@@ -2,14 +2,12 @@
 
     <?php
 
-    foreach ($mainMenu as $menuItem) {
-
-        $classLink = isCurrentUrl($menuItem['path']) !== false ? 'active' : '';
+    foreach ($menuItems as $menuItem) {
 
         ?>
 
         <li>
-            <a class="<?= $classLink; ?>"
+            <a class="<?= isCurrentUrl($menuItem['path']) ? 'active' : '' ?>"
                href="<?= $menuItem['path']; ?>"><?= cutString($menuItem['title']); ?></a>
         </li>
 

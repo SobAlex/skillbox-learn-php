@@ -1,15 +1,23 @@
 <?php
 
-function getHeader()
+function getHeader($mainMenu)
+
 {
+
     foreach ($mainMenu as $menuItem) {
 
-        $currentUrl = isCurrentUrl($menuItem['path']); // true либо false
+        if (isCurrentUrl($menuItem['path'])) {
 
-        if ($currentUrl) { // как только условие станет true то в $titlePage запишется текущий title
-
-            $titlePage = $menuItem['title'];
+            return $menuItem['title'];
 
         }
+
     }
+
+    return "Страница не найдена";
+
 }
+
+?>
+
+<h1><?= getHeader($mainMenu) ?></h1>

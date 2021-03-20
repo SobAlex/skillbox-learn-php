@@ -16,7 +16,9 @@ if (isset($_POST['submit'])) { // если нажали кнопку сабми�
 
 <?php
 
-require_once $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; // шапка сайта
+include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; // шапка сайта
+
+require $_SERVER['DOCUMENT_ROOT'] . '/functions/get_header.php';
 
 ?>
 

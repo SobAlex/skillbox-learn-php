@@ -25,7 +25,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/includes/main_menu.php'; // основно
 <div class="clear">
     <?php
 
-    showMenu('main-menu'); // вызов функции с аргументом для стилизации в header
+    showMenu($mainMenu, 'main-menu', 'sort', SORT_ASC); // вызов функции с аргументом для стилизации в header
 
     ?>
 </div>
