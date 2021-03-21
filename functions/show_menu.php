@@ -10,13 +10,11 @@ function debug($data)
 }
 
 // сортировка массива
-function arraySort($key='sort', $sortBy = SORT_ASC) // вспомогательная функция для сортировки меню
+function arraySort($menuItems, $key = 'sort', $sortBy = SORT_ASC) // вспомогательная функция для сортировки меню
 {
-
-    return function ($a, $b) use ($key, $sortBy) {
-        return $sortBy == SORT_ASC ? $a[$key] <=> $b[$key]: $b[$key] <=> $a[$key];
-    };
-
+    usort($menuItems, function ($a, $b) use ($key, $sortBy) {
+        return $sortBy == SORT_ASC ? $a[$key] <=> $b[$key] : $b[$key] <=> $a[$key];
+    });
     return $mainMenu;
 }
 
@@ -25,13 +23,25 @@ function cutString($linkTitle, $length = 12, $appends = '...'): string  // фу�
 {
     return mb_strimwidth($linkTitle, 0, $length, $appends);
 
-};
+}
+
+;
 
 //debug($mainMenu);
 
 // вывод отсортированного меню
 function showMenu($menuItems, $classMenu, $key, $sortBy)
 {
-    usort($menuItems, arraySort($key, $sortBy));
     require $_SERVER['DOCUMENT_ROOT'] . '/templates/nav.php';  // разметка навигации (nav)
+    return $menuItems;
+}
+
+function getHeader($mainMenu)
+{
+    foreach ($mainMenu as $menuItem) {
+        if (isCurrentUrl($menuItem['path'])) {
+            return $menuItem['title'];
+        }
+    }
+    return "Страница не найдена";
 }

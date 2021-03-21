@@ -18,8 +18,6 @@ if (isset($_POST['submit'])) { // если нажали кнопку сабми�
 
 include $_SERVER['DOCUMENT_ROOT'] . '/templates/header.php'; // шапка сайта
 
-require $_SERVER['DOCUMENT_ROOT'] . '/functions/get_header.php';
-
 ?>
 
     <table width="100%" border="0" cellspacing="0" cellpadding="0">

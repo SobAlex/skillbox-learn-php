@@ -24,8 +24,14 @@ require $_SERVER['DOCUMENT_ROOT'] . '/includes/main_menu.php'; // основно
 
 <div class="clear">
     <?php
-
     showMenu($mainMenu, 'main-menu', 'sort', SORT_ASC); // вызов функции с аргументом для стилизации в header
-
     ?>
+
+    <table width="100%" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td class="left-collum-index">
+                <h1><?= getHeader($mainMenu) ?></h1>
+            </td>
+        </tr>
+    </table>
 </div>
